@@ -11,7 +11,7 @@
 
     if (isset($delete_entry) && !empty($delete_entry)) {
 
-      $query = $sql->query("DELETE FROM testDB WHERE title = '$delete_entry'") or die(mysqli_error($r));
+      $query = $sql->query("DELETE FROM testDB WHERE title = '$delete_entry'") or die(mysqli_error($sql));
 
       header('Location: /');
       exit();
@@ -22,9 +22,6 @@
   {
      if(isset($_POST['title']) && !empty($_POST['title'])) {
        delete_entry();
-     } else {
-       header('Location: /');
-       exit();
-     }
+     } 
   }
 ?>

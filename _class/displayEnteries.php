@@ -8,7 +8,7 @@ class displayEnteries extends connectDB {
     $sql = $obj->connect();
 
     $q = "SELECT * FROM testDB ORDER BY created DESC LIMIT 10";
-    $result = $sql->query($q) or die(mysqli_error());
+    $result = $sql->query($q) or die(mysqli_error($sql));
 
     if($result) {
       $entry_display = "";
